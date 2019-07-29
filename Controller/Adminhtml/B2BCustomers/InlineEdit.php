@@ -6,7 +6,7 @@
  * Time: 18:01
  */
 
-namespace Roma\B2BCustomers\Controller\Adminhtml\Lessons;
+namespace Roma\B2BCustomers\Controller\Adminhtml\B2BCustomers;
 
 
 class InlineEdit extends \Magento\Backend\App\Action

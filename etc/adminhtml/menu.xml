@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Roma_B2BCustomers::all"
+                title="B2B Customers"
+                translate="title"
+                module="Roma_B2BCustomers"
+                sortOrder="30"
+                dependsOnModule="Roma_B2BCustomers"
+                resource="Roma_B2BCustomers::all"
+        />
+        <add
+                id="Roma_B2BCustomers::system_config"
+                title="Config"
+                translate="title"
+                module="Roma_B2BCustomers"
+                sortOrder="20"
+                parent="Roma_B2BCustomers::all"
+                action="admin/system_config/edit/section/b2bCustomers"
+                resource="Roma_B2BCustomers::system_config"
+        />
+        <add
+                id="Roma_B2BCustomers::b2bcustomers"
+                title="B2BCustomers UI Grid"
+                translate="title"
+                module="Roma_B2BCustomers"
+                sortOrder="10"
+                parent="Roma_B2BCustomers::all"
+                action="b2bcustomers/b2bcustomers/listing"
+                resource="Roma_B2BCustomers::b2bcustomers"
+        />
+        <add
+                id="Roma_B2BCustomers::uicreate"
+                title="Add New B2B Customer"
+                translate="title"
+                module="Roma_B2BCustomers"
+                sortOrder="10"
+                parent="Roma_B2BCustomers::all"
+                action="b2bcustomers/b2bcustomers/uicreate"
+                resource="Roma_B2BCustomers::uicreate"
+        />
+    </menu>
+</config>

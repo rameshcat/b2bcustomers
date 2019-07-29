@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Roma\B2BCustomers\Api\Data\B2BInterface"
+                type="Roma\B2BCustomers\Model\B2BCustomers" />
+    <preference for="Roma\B2BCustomers\Api\B2BRepositoryInterface"
+                type="Roma\B2BCustomers\Model\B2BRepository" />
+    <preference for="Roma\B2BCustomers\Api\Data\B2BSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="b2bcustomers_grid_listing_data_source" xsi:type="string">Roma\B2BCustomers\Model\ResourceModel\B2BCustomers\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

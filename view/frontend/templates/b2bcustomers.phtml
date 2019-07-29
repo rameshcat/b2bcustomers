@@ -1,0 +1,41 @@
+<?php
+/** @var $block \Roma\B2BCustomers\Block\B2BCustomersList */
+
+$searchResult = $block->getActualB2BCustomersList();
+
+?>
+
+<div id="lessons-list">
+    <h1><?= __('B2B Customers') ?></h1>
+    <?php if ($searchResult->getTotalCount()  === 0): ?>
+        <p><?= __('No B2B Customers') ?></p>
+    <?php else: ?>
+        <table>
+            <tr>
+                <th>
+                    First name
+                </th>
+                <th>
+                    Last name
+                </th>
+                <th>
+                    Code
+                </th>
+            </tr>
+            <?php foreach ($searchResult->getItems() as $item): ?>
+                <?php /** @var \Sysint\MagentoAcademy\Api\Data\LessonsInterface $item */ ?>
+                <tr>
+                    <td>
+                        <?= $item->getFirstName() ?>
+                    </td>
+                    <td>
+                        <?= $item->getLastName() ?>
+                    </td>
+                    <td>
+                        <?= $item->getCode() ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
+</div>
